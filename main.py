@@ -25,7 +25,7 @@ agents_history = np.empty((1, agents_n))
 progress = tqdm.tqdm(total=iterations)
 
 for i in range(iterations):
-	#make transactions between two randomly chosen agents	
+	# Make transactions between two randomly chosen agents
 	ag1 = np.random.choice(idx)
 	ag2 = np.random.choice(idx)
 	
@@ -35,21 +35,18 @@ for i in range(iterations):
 
 	if not i%10000:
 		agents_history = np.vstack((agents_history, agents))
-		#plt.hist(agents)
-		#plt.savefig(os.path.join(cwd, "figures", str(i) + ".png"))
-		#plt.show()
 	progress.update(n=1)
 
 progress.close()
-#agents_history = np.vstack((agents_history, np.tile(agents_history[-1], 40).reshape(40, agents_n)))
+
 #PLOT Distributions
 fig, ax = plt.subplots(1,1, figsize=(10,10))
 
 def update(i):
 	ax.clear()
-	ax.set_title("Money Distribution at time {}".format(i))
-	ax.set_xlabel("Income")
-	ax.set_ylabel("Probability")
+	ax.set_title("Money Distribution at time {}".format(i), fontsize=30)
+	ax.set_xlabel("Income", fontsize=20)
+	ax.set_ylabel("Probability", fontsize=20)
 	ax.hist(agents_history[i], 20, density=True)
 
 if save:
