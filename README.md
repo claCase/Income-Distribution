@@ -14,5 +14,5 @@ python3 main.py --iter 1000000 --agents 200 --show True --save True
 #### Distribution Evolution 
 ![alt text](https://github.com/claCase97/Income-Distribution/blob/master/figures/animation.gif?raw=True)
 #### Final Distribution 
-![alt text](https://github.com/claCase97/Income-Distribution/blob/master/figures/0_iter_10000000_ag_400.png?raw=True)
+![alt text](https://github.com/claCase97/Income-Distribution/blob/master/figures/0_iter_10000000_ag_500.png?raw=True)
 
