@@ -59,8 +59,8 @@ if show:
 fig, ax = plt.subplots(2,1, figsize=(5,10))
 ax[0].set_title("Money Frequency Distribution")
 ax[1].set_title("Money Cumulative Distribution")
-ax[0].hist(agents, 25, density=True)
-ax[1].hist(agents, 25, density=True, cumulative=True)
+ax[0].hist(agents, 20, density=True)
+ax[1].hist(agents, 20, density=True, cumulative=True)
 
 if save:
 	i = 0
