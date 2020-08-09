@@ -41,27 +41,30 @@ for i in range(iterations):
 	progress.update(n=1)
 
 progress.close()
-
+#agents_history = np.vstack((agents_history, np.tile(agents_history[-1], 40).reshape(40, agents_n)))
 #PLOT Distributions
 fig, ax = plt.subplots(1,1, figsize=(10,10))
-ax.set_title("Money Distribution")
-ax.set_xlabel("Income")
-ax.set_ylabel("Probability")
 
 def update(i):
 	ax.clear()
+	ax.set_title("Money Distribution at time {}".format(i))
+	ax.set_xlabel("Income")
+	ax.set_ylabel("Probability")
 	ax.hist(agents_history[i], 20, density=True)
 
-anim = animation.FuncAnimation(fig, update, frames=len(agents_history)-1, repeat=False)
-writer = animation.FFMpegWriter(50)
-anim.save(os.path.join(cwd, "figures", "animation.mp4"), writer=writer)
-plt.show()
+if save:
+	anim = animation.FuncAnimation(fig, update, frames=len(agents_history)-1, repeat=False)
+	writer = animation.FFMpegWriter(50)
+	anim.save(os.path.join(cwd, "figures", "animation.mp4"), writer=writer)
+if show:
+	plt.show()
 
-fig, ax = plt.subplots(2,1)
+fig, ax = plt.subplots(2,1, figsize=(5,10))
 ax[0].set_title("Money Frequency Distribution")
-ax[0].set_title("Money Cumulative Distribution")
-ax[0].hist(agents, 20, density=True)
-ax[1].hist(agents, 20, density=True, cumulative=True)
+ax[1].set_title("Money Cumulative Distribution")
+ax[0].hist(agents, 25, density=True)
+ax[1].hist(agents, 25, density=True, cumulative=True)
+
 if save:
 	i = 0
 	path = os.path.join(cwd, "figures")
