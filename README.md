@@ -5,6 +5,11 @@ actual national income distribution. The simulation is viewed as a statistical m
 kinetic energy by colliding with other particles through random motion which represents money transactions. 
 [Link to the paper by Victor M. Yakovenko](https://arxiv.org/abs/1204.6483)
 
+## Usage Example
+```console
+python3 main.py --iter 1000000 --agents 200 --show True --save True 
+```
+
 ## Simulation Results 
 #### Distribution Evolution 
 ![alt text](https://github.com/claCase97/Income-Distribution/blob/master/figures/animation.gif?raw=True)
